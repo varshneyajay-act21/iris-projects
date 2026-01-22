@@ -1,0 +1,7 @@
+com/grocery/receipt/ReceiptFormatterTest.class
+com/grocery/model/BasketTest.class
+com/grocery/service/CheckoutServiceTest.class
+com/grocery/discount/BuyTwoGetOneFreeDiscountTest.class
+com/grocery/discount/BulkDiscountDiscountTest.class
+com/grocery/model/ItemTest.class
+com/grocery/integration/CheckoutIntegrationTest.class

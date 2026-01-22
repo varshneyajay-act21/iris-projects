@@ -1,0 +1,16 @@
+com/grocery/receipt/BasketSummary$ItemSummary.class
+com/grocery/GroceryCheckoutApp.class
+com/grocery/receipt/ReceiptFormatter.class
+com/grocery/model/Item.class
+com/grocery/model/BasketItem.class
+com/grocery/model/Basket.class
+com/grocery/discount/Discount.class
+com/grocery/service/CheckoutResult.class
+com/grocery/service/CheckoutService.class
+com/grocery/discount/BulkDiscountDiscount.class
+com/grocery/receipt/BasketSummary.class
+com/grocery/discount/BuyTwoGetOneFreeDiscount.class
+com/grocery/catalog/ItemCatalog.class
+com/grocery/discount/DiscountRegistry.class
+com/grocery/receipt/ReceiptItem.class
+com/grocery/discount/DiscountResult.class
