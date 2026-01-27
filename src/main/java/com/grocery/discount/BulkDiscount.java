@@ -16,14 +16,14 @@ import java.util.Objects;
  * @author Grocery System
  * @version 1.0.0
  */
-public class BulkDiscountDiscount extends Discount {
-    private static final Logger LOGGER = LoggerFactory.getLogger(BulkDiscountDiscount.class);
+public class BulkDiscount extends Discount {
+    private static final Logger LOGGER = LoggerFactory.getLogger(BulkDiscount.class);
     private final Item item;
     private final int itemCount;
     private final BigDecimal discountPrice;
 
     /**
-     * Creates a new BulkDiscountDiscount.
+     * Creates a new BulkDiscount.
      *
      * @param item the item this discount applies to (must not be null)
      * @param itemCount the number of items required for the discount (must be positive)
@@ -31,7 +31,7 @@ public class BulkDiscountDiscount extends Discount {
      * @throws NullPointerException if item or discountPrice is null
      * @throws IllegalArgumentException if itemCount is not positive or discountPrice is negative
      */
-    public BulkDiscountDiscount(Item item, int itemCount, BigDecimal discountPrice) {
+    public BulkDiscount(Item item, int itemCount, BigDecimal discountPrice) {
         this.item = Objects.requireNonNull(item, "Item cannot be null");
         this.discountPrice = Objects.requireNonNull(discountPrice, "Discount price cannot be null");
 
@@ -44,7 +44,7 @@ public class BulkDiscountDiscount extends Discount {
 
         this.itemCount = itemCount;
         LOGGER.debug(
-                "Created BulkDiscountDiscount for item: {}, {} for £{}",
+                "Created BulkDiscount for item: {}, {} for £{}",
                 item.getName(),
                 itemCount,
                 discountPrice

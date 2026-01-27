@@ -1,8 +1,9 @@
 package com.grocery.service;
 
-import com.grocery.discount.BulkDiscountDiscount;
+import com.grocery.discount.BulkDiscount;
 import com.grocery.discount.BuyTwoGetOneFreeDiscount;
 import com.grocery.discount.DiscountRegistry;
+import com.grocery.exception.GroceryException;
 import com.grocery.model.Basket;
 import com.grocery.model.Item;
 import org.junit.jupiter.api.BeforeEach;
@@ -32,20 +33,20 @@ class CheckoutServiceTest {
 
         discountRegistry = new DiscountRegistry();
         discountRegistry.registerDiscount(new BuyTwoGetOneFreeDiscount(banana));
-        discountRegistry.registerDiscount(new BulkDiscountDiscount(orange, 3, new BigDecimal("0.75")));
+        discountRegistry.registerDiscount(new BulkDiscount(orange, 3, new BigDecimal("0.75")));
 
         checkoutService = new CheckoutService(discountRegistry);
     }
 
     @Test
     void testCheckoutWithNullBasket() {
-        assertThrows(NullPointerException.class, () -> checkoutService.processCheckout(null));
+        assertThrows(GroceryException.class, () -> checkoutService.processCheckout(null));
     }
 
     @Test
     void testCheckoutWithEmptyBasket() {
         Basket basket = new Basket();
-        assertThrows(IllegalArgumentException.class, () -> checkoutService.processCheckout(basket));
+        assertThrows(GroceryException.class, () -> checkoutService.processCheckout(basket));
     }
 
     @Test

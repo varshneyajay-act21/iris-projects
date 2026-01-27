@@ -3,6 +3,7 @@ package com.grocery.service;
 import com.grocery.discount.Discount;
 import com.grocery.discount.DiscountRegistry;
 import com.grocery.discount.DiscountResult;
+import com.grocery.exception.GroceryException;
 import com.grocery.model.Basket;
 import com.grocery.model.BasketItem;
 import org.slf4j.Logger;
@@ -37,73 +38,82 @@ public class CheckoutService {
      *
      * @param basket the basket to process (must not be null)
      * @return the checkout result with prices and discounts
-     * @throws NullPointerException if basket is null
-     * @throws IllegalArgumentException if the basket is empty
+     * @throws GroceryException if basket is null, empty, or processing fails
      */
     public CheckoutResult processCheckout(Basket basket) {
-        Objects.requireNonNull(basket, "Basket cannot be null");
+        if (basket == null) {
+            throw new GroceryException("Basket cannot be null");
+        }
 
         if (basket.isEmpty()) {
             LOGGER.warn("Attempting to process checkout for empty basket");
-            throw new IllegalArgumentException("Cannot process checkout for empty basket");
+            throw new GroceryException("Cannot process checkout for empty basket");
         }
 
         LOGGER.info("Processing checkout for basket with {} unique items", basket.getUniqueItemCount());
 
-        List<BasketItem> items = basket.getItems();
-        BigDecimal subtotal = BigDecimal.ZERO;
-        List<DiscountResult> appliedDiscounts = new ArrayList<>();
+        try {
+            List<BasketItem> items = basket.getItems();
+            BigDecimal subtotal = BigDecimal.ZERO;
+            List<DiscountResult> appliedDiscounts = new ArrayList<>();
 
-        // Calculate subtotal and apply discounts
-        for (BasketItem basketItem : items) {
-            BigDecimal itemTotal = basketItem.getItem().getPricePerUnit()
-                    .multiply(BigDecimal.valueOf(basketItem.getQuantity()));
-            subtotal = subtotal.add(itemTotal);
+            // Calculate subtotal and apply discounts
+            for (BasketItem basketItem : items) {
+                BigDecimal itemTotal = basketItem.getItem().getPricePerUnit()
+                        .multiply(BigDecimal.valueOf(basketItem.getQuantity()));
+                subtotal = subtotal.add(itemTotal);
 
-            LOGGER.debug(
-                    "Item: {}, Quantity: {}, Unit Price: {}, Total: {}",
-                    basketItem.getItem().getName(),
-                    basketItem.getQuantity(),
-                    basketItem.getItem().getPricePerUnit(),
-                    itemTotal
-            );
+                LOGGER.debug(
+                        "Item: {}, Quantity: {}, Unit Price: {}, Total: {}",
+                        basketItem.getItem().getName(),
+                        basketItem.getQuantity(),
+                        basketItem.getItem().getPricePerUnit(),
+                        itemTotal
+                );
 
-            // Apply applicable discounts
-            for (Discount discount : discountRegistry.getDiscounts()) {
-                if (discount.getItem().equals(basketItem.getItem())) {
-                    DiscountResult discountResult = discount.calculateDiscount(
-                            basketItem.getQuantity(),
-                            basketItem.getItem().getPricePerUnit()
-                    );
-
-                    if (discountResult.isApplicable()) {
-                        appliedDiscounts.add(discountResult);
-                        LOGGER.info(
-                                "Applied discount '{}' to {}: -£{}",
-                                discountResult.getDescription(),
-                                basketItem.getItem().getName(),
-                                discountResult.getDiscountAmount()
+                // Apply applicable discounts
+                for (Discount discount : discountRegistry.getDiscounts()) {
+                    if (discount.getItem().equals(basketItem.getItem())) {
+                        DiscountResult discountResult = discount.calculateDiscount(
+                                basketItem.getQuantity(),
+                                basketItem.getItem().getPricePerUnit()
                         );
+
+                        if (discountResult.isApplicable()) {
+                            appliedDiscounts.add(discountResult);
+                            LOGGER.info(
+                                    "Applied discount '{}' to {}: -£{}",
+                                    discountResult.getDescription(),
+                                    basketItem.getItem().getName(),
+                                    discountResult.getDiscountAmount()
+                            );
+                        }
                     }
                 }
             }
+
+            // Calculate total discount
+            BigDecimal totalDiscount = appliedDiscounts.stream()
+                    .map(DiscountResult::getDiscountAmount)
+                    .reduce(BigDecimal.ZERO, BigDecimal::add);
+
+            // Calculate final total
+            BigDecimal total = subtotal.subtract(totalDiscount);
+
+            LOGGER.info(
+                    "Checkout processed - Subtotal: {}, Total Discount: {}, Final Total: {}",
+                    subtotal,
+                    totalDiscount,
+                    total
+            );
+
+            return new CheckoutResult(subtotal, appliedDiscounts, total);
+        } catch (GroceryException e) {
+            // let our domain exceptions bubble up
+            throw e;
+        } catch (Exception e) {
+            // Wrap unexpected exceptions to provide context
+            throw new GroceryException("Failed to process checkout", e);
         }
-
-        // Calculate total discount
-        BigDecimal totalDiscount = appliedDiscounts.stream()
-                .map(DiscountResult::getDiscountAmount)
-                .reduce(BigDecimal.ZERO, BigDecimal::add);
-
-        // Calculate final total
-        BigDecimal total = subtotal.subtract(totalDiscount);
-
-        LOGGER.info(
-                "Checkout processed - Subtotal: {}, Total Discount: {}, Final Total: {}",
-                subtotal,
-                totalDiscount,
-                total
-        );
-
-        return new CheckoutResult(subtotal, appliedDiscounts, total);
     }
 }

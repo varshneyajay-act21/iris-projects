@@ -1,7 +1,7 @@
 package com.grocery.integration;
 
 import com.grocery.catalog.ItemCatalog;
-import com.grocery.discount.BulkDiscountDiscount;
+import com.grocery.discount.BulkDiscount;
 import com.grocery.discount.BuyTwoGetOneFreeDiscount;
 import com.grocery.discount.DiscountRegistry;
 import com.grocery.model.Basket;
@@ -34,7 +34,7 @@ class CheckoutIntegrationTest {
         // Initialize with production-like configuration
         discountRegistry = new DiscountRegistry();
         discountRegistry.registerDiscount(new BuyTwoGetOneFreeDiscount(ItemCatalog.BANANAS));
-        discountRegistry.registerDiscount(new BulkDiscountDiscount(
+        discountRegistry.registerDiscount(new BulkDiscount(
                 ItemCatalog.ORANGES,
                 3,
                 new BigDecimal("0.75")

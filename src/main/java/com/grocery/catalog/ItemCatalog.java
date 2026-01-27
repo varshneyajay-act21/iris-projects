@@ -1,6 +1,7 @@
 package com.grocery.catalog;
 
 import com.grocery.model.Item;
+import com.grocery.exception.CatalogException;
 import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.HashMap;
@@ -46,11 +47,19 @@ public class ItemCatalog {
      * Retrieves an item by name.
      *
      * @param name the item name (case-insensitive)
-     * @return the Item, or null if not found
+     * @return the Item
+     * @throws CatalogException if name is null or item not found
      */
     public static Item getItem(String name) {
-        Objects.requireNonNull(name, "Item name cannot be null");
-        return CATALOG.get(name.toLowerCase());
+        if (name == null) {
+            throw new CatalogException("Item name cannot be null");
+        }
+
+        Item item = CATALOG.get(name.toLowerCase());
+        if (item == null) {
+            throw new CatalogException("Item not found in catalog: " + name);
+        }
+        return item;
     }
 
     /**
@@ -67,9 +76,12 @@ public class ItemCatalog {
      *
      * @param name the item name (case-insensitive)
      * @return true if the item exists
+     * @throws CatalogException if name is null
      */
     public static boolean containsItem(String name) {
-        Objects.requireNonNull(name, "Item name cannot be null");
+        if (name == null) {
+            throw new CatalogException("Item name cannot be null");
+        }
         return CATALOG.containsKey(name.toLowerCase());
     }
 }

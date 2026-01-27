@@ -8,19 +8,19 @@ import java.math.BigDecimal;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Unit tests for the BulkDiscountDiscount class.
+ * Unit tests for the BulkDiscount class.
  *
  * @author Grocery System
  * @version 1.0.0
  */
-class BulkDiscountDiscountTest {
-    private BulkDiscountDiscount discount;
+class BulkDiscountTest {
+    private BulkDiscount discount;
     private Item orange;
 
     @BeforeEach
     void setUp() {
         orange = new Item("Orange", new BigDecimal("0.30"));
-        discount = new BulkDiscountDiscount(orange, 3, new BigDecimal("0.75"));
+        discount = new BulkDiscount(orange, 3, new BigDecimal("0.75"));
     }
 
     @Test
@@ -67,25 +67,25 @@ class BulkDiscountDiscountTest {
     @Test
     void testDiscountCreationWithInvalidItemCount() {
         assertThrows(IllegalArgumentException.class, () ->
-            new BulkDiscountDiscount(orange, 0, new BigDecimal("0.75")));
+            new BulkDiscount(orange, 0, new BigDecimal("0.75")));
     }
 
     @Test
     void testDiscountCreationWithNegativePrice() {
         assertThrows(IllegalArgumentException.class, () ->
-            new BulkDiscountDiscount(orange, 3, new BigDecimal("-0.75")));
+            new BulkDiscount(orange, 3, new BigDecimal("-0.75")));
     }
 
     @Test
     void testDiscountCreationWithNullItem() {
         assertThrows(NullPointerException.class, () ->
-            new BulkDiscountDiscount(null, 3, new BigDecimal("0.75")));
+            new BulkDiscount(null, 3, new BigDecimal("0.75")));
     }
 
     @Test
     void testDiscountCreationWithNullPrice() {
         assertThrows(NullPointerException.class, () ->
-            new BulkDiscountDiscount(orange, 3, null));
+            new BulkDiscount(orange, 3, null));
     }
 
     @Test

@@ -1,12 +1,13 @@
 package com.grocery;
 
 import com.grocery.catalog.ItemCatalog;
-import com.grocery.discount.BulkDiscountDiscount;
+import com.grocery.discount.BulkDiscount;
 import com.grocery.discount.BuyTwoGetOneFreeDiscount;
 import com.grocery.discount.DiscountRegistry;
+import com.grocery.exception.CatalogException;
+import com.grocery.exception.GroceryException;
 import com.grocery.model.Basket;
 import com.grocery.receipt.ReceiptFormatter;
-import com.grocery.receipt.BasketSummary;
 import com.grocery.receipt.ReceiptItem;
 import com.grocery.service.CheckoutService;
 import com.grocery.service.CheckoutResult;
@@ -36,7 +37,7 @@ public class GroceryCheckoutApp {
         // Initialize discount registry with available discounts
         DiscountRegistry discountRegistry = new DiscountRegistry();
         discountRegistry.registerDiscount(new BuyTwoGetOneFreeDiscount(ItemCatalog.BANANAS));
-        discountRegistry.registerDiscount(new BulkDiscountDiscount(
+        discountRegistry.registerDiscount(new BulkDiscount(
                 ItemCatalog.ORANGES,
                 3,
                 new BigDecimal("0.75")
@@ -107,9 +108,12 @@ public class GroceryCheckoutApp {
                         LOGGER.warn("Invalid menu option selected: {}", choice);
                 }
             }
+        } catch (GroceryException e) {
+            LOGGER.error("Application error: {}", e.getMessage(), e);
+            System.err.println("An application error occurred: " + e.getMessage());
         } catch (Exception e) {
-            LOGGER.error("Application error", e);
-            System.err.println("An error occurred: " + e.getMessage());
+            LOGGER.error("Unexpected application error", e);
+            System.err.println("An unexpected error occurred: " + e.getMessage());
         }
     }
 
@@ -140,6 +144,10 @@ public class GroceryCheckoutApp {
         } catch (NumberFormatException e) {
             System.out.println("Invalid quantity. Please enter a number.");
             LOGGER.warn("Invalid quantity entered: {}", scanner.nextLine(), e);
+        } catch (CatalogException e) {
+            // Defensive: getItem may throw if itemName was null or removed concurrently
+            System.out.println("Item not available: " + e.getMessage());
+            LOGGER.warn("Attempted to add item failed: {}", e.getMessage());
         }
     }
 
@@ -155,9 +163,14 @@ public class GroceryCheckoutApp {
             return;
         }
 
-        basket.removeItem(ItemCatalog.getItem(itemName));
-        System.out.printf("Removed %s from basket.%n", itemName);
-        LOGGER.info("Removed {} from basket", itemName);
+        try {
+            basket.removeItem(ItemCatalog.getItem(itemName));
+            System.out.printf("Removed %s from basket.%n", itemName);
+            LOGGER.info("Removed {} from basket", itemName);
+        } catch (CatalogException e) {
+            System.out.println("Item not available: " + e.getMessage());
+            LOGGER.warn("Attempted to remove item failed: {}", e.getMessage());
+        }
     }
 
     /**
@@ -209,7 +222,7 @@ public class GroceryCheckoutApp {
             System.out.println("\n" + receipt);
 
             LOGGER.info("Checkout completed - Total: £{}", result.getTotal());
-        } catch (IllegalArgumentException e) {
+        } catch (GroceryException e) {
             System.out.println("Checkout error: " + e.getMessage());
             LOGGER.error("Checkout error", e);
         }

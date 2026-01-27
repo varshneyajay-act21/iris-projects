@@ -1,6 +1,5 @@
 package com.grocery.receipt;
 
-import com.grocery.discount.BulkDiscountDiscount;
 import com.grocery.discount.BuyTwoGetOneFreeDiscount;
 import com.grocery.discount.DiscountRegistry;
 import com.grocery.model.Basket;

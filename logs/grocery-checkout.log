@@ -893,3 +893,738 @@
 2026-01-27 09:10:06.273 [main] INFO  com.grocery.GroceryCheckoutApp - Grocery Checkout System initialized
 2026-01-27 09:10:06.274 [main] INFO  com.grocery.GroceryCheckoutApp - Starting Grocery Checkout System
 2026-01-27 09:10:09.595 [main] INFO  com.grocery.GroceryCheckoutApp - Application closed by user
+2026-01-27 19:00:48.733 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:00:48.735 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:00:48.736 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:00:48.740 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 2 unique items
+2026-01-27 19:00:48.741 [main] DEBUG com.grocery.service.CheckoutService - Item: Bananas, Quantity: 4, Unit Price: 0.50, Total: 2.00
+2026-01-27 19:00:48.741 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Bananas: quantity=4, freeItems=1, discountAmount=0.50
+2026-01-27 19:00:48.741 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Bananas: -£0.50
+2026-01-27 19:00:48.742 [main] DEBUG com.grocery.service.CheckoutService - Item: Oranges, Quantity: 5, Unit Price: 0.30, Total: 1.50
+2026-01-27 19:00:48.742 [main] DEBUG c.g.discount.BulkDiscountDiscount - Discount applied for Oranges: quantity=5, discountGroups=1, remainder=2, discountAmount=0.15
+2026-01-27 19:00:48.743 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Oranges: -£0.15
+2026-01-27 19:00:48.744 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 3.50, Total Discount: 0.65, Final Total: 2.85
+2026-01-27 19:00:48.746 [main] DEBUG c.grocery.receipt.ReceiptFormatter - Formatting receipt from checkout result with 2 items
+2026-01-27 19:00:48.758 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:00:48.758 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:00:48.759 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:00:48.759 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:00:48.759 [main] DEBUG com.grocery.service.CheckoutService - Item: Oranges, Quantity: 3, Unit Price: 0.30, Total: 0.90
+2026-01-27 19:00:48.759 [main] DEBUG c.g.discount.BulkDiscountDiscount - Discount applied for Oranges: quantity=3, discountGroups=1, remainder=0, discountAmount=0.15
+2026-01-27 19:00:48.759 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Oranges: -£0.15
+2026-01-27 19:00:48.759 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 0.90, Total Discount: 0.15, Final Total: 0.75
+2026-01-27 19:00:48.762 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:00:48.762 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:00:48.763 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:00:48.763 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:00:48.763 [main] DEBUG com.grocery.service.CheckoutService - Item: Bananas, Quantity: 2, Unit Price: 0.50, Total: 1.00
+2026-01-27 19:00:48.763 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - No discount applied for Bananas - quantity 2 is less than 3
+2026-01-27 19:00:48.763 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 1.00, Total Discount: 0, Final Total: 1.00
+2026-01-27 19:00:48.765 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:00:48.765 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:00:48.765 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:00:48.765 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:00:48.765 [main] DEBUG com.grocery.service.CheckoutService - Item: Bananas, Quantity: 3, Unit Price: 0.50, Total: 1.50
+2026-01-27 19:00:48.765 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Bananas: quantity=3, freeItems=1, discountAmount=0.50
+2026-01-27 19:00:48.765 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Bananas: -£0.50
+2026-01-27 19:00:48.766 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 1.50, Total Discount: 0.50, Final Total: 1.00
+2026-01-27 19:00:48.767 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:00:48.767 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:00:48.767 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:00:48.768 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:00:48.768 [main] DEBUG com.grocery.service.CheckoutService - Item: Oranges, Quantity: 12, Unit Price: 0.30, Total: 3.60
+2026-01-27 19:00:48.768 [main] DEBUG c.g.discount.BulkDiscountDiscount - Discount applied for Oranges: quantity=12, discountGroups=4, remainder=0, discountAmount=0.60
+2026-01-27 19:00:48.768 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Oranges: -£0.60
+2026-01-27 19:00:48.769 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 3.60, Total Discount: 0.60, Final Total: 3.00
+2026-01-27 19:00:48.770 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:00:48.770 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:00:48.770 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:00:48.771 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 3 unique items
+2026-01-27 19:00:48.771 [main] DEBUG com.grocery.service.CheckoutService - Item: Apples, Quantity: 2, Unit Price: 0.60, Total: 1.20
+2026-01-27 19:00:48.771 [main] DEBUG com.grocery.service.CheckoutService - Item: Lemons, Quantity: 4, Unit Price: 0.25, Total: 1.00
+2026-01-27 19:00:48.772 [main] DEBUG com.grocery.service.CheckoutService - Item: Peaches, Quantity: 1, Unit Price: 0.75, Total: 0.75
+2026-01-27 19:00:48.772 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 2.95, Total Discount: 0, Final Total: 2.95
+2026-01-27 19:00:48.775 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:00:48.775 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:00:48.775 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:00:48.776 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 5 unique items
+2026-01-27 19:00:48.776 [main] DEBUG com.grocery.service.CheckoutService - Item: Bananas, Quantity: 6, Unit Price: 0.50, Total: 3.00
+2026-01-27 19:00:48.777 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Bananas: quantity=6, freeItems=2, discountAmount=1.00
+2026-01-27 19:00:48.777 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Bananas: -£1.00
+2026-01-27 19:00:48.777 [main] DEBUG com.grocery.service.CheckoutService - Item: Oranges, Quantity: 9, Unit Price: 0.30, Total: 2.70
+2026-01-27 19:00:48.777 [main] DEBUG c.g.discount.BulkDiscountDiscount - Discount applied for Oranges: quantity=9, discountGroups=3, remainder=0, discountAmount=0.45
+2026-01-27 19:00:48.777 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Oranges: -£0.45
+2026-01-27 19:00:48.778 [main] DEBUG com.grocery.service.CheckoutService - Item: Apples, Quantity: 2, Unit Price: 0.60, Total: 1.20
+2026-01-27 19:00:48.778 [main] DEBUG com.grocery.service.CheckoutService - Item: Lemons, Quantity: 3, Unit Price: 0.25, Total: 0.75
+2026-01-27 19:00:48.778 [main] DEBUG com.grocery.service.CheckoutService - Item: Peaches, Quantity: 1, Unit Price: 0.75, Total: 0.75
+2026-01-27 19:00:48.778 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 8.40, Total Discount: 1.45, Final Total: 6.95
+2026-01-27 19:00:48.780 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:00:48.780 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:00:48.781 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:00:48.781 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:00:48.781 [main] DEBUG com.grocery.service.CheckoutService - Item: Bananas, Quantity: 10, Unit Price: 0.50, Total: 5.00
+2026-01-27 19:00:48.781 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Bananas: quantity=10, freeItems=3, discountAmount=1.50
+2026-01-27 19:00:48.782 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Bananas: -£1.50
+2026-01-27 19:00:48.782 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 5.00, Total Discount: 1.50, Final Total: 3.50
+2026-01-27 19:00:48.785 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:00:48.785 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:00:48.785 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:00:48.786 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 3 unique items
+2026-01-27 19:00:48.786 [main] DEBUG com.grocery.service.CheckoutService - Item: Bananas, Quantity: 3, Unit Price: 0.50, Total: 1.50
+2026-01-27 19:00:48.786 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Bananas: quantity=3, freeItems=1, discountAmount=0.50
+2026-01-27 19:00:48.786 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Bananas: -£0.50
+2026-01-27 19:00:48.786 [main] DEBUG com.grocery.service.CheckoutService - Item: Oranges, Quantity: 4, Unit Price: 0.30, Total: 1.20
+2026-01-27 19:00:48.786 [main] DEBUG c.g.discount.BulkDiscountDiscount - Discount applied for Oranges: quantity=4, discountGroups=1, remainder=1, discountAmount=0.15
+2026-01-27 19:00:48.786 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Oranges: -£0.15
+2026-01-27 19:00:48.786 [main] DEBUG com.grocery.service.CheckoutService - Item: Apples, Quantity: 1, Unit Price: 0.60, Total: 0.60
+2026-01-27 19:00:48.786 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 3.30, Total Discount: 0.65, Final Total: 2.65
+2026-01-27 19:00:48.788 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:00:48.788 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:00:48.789 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:00:48.789 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:00:48.789 [main] DEBUG com.grocery.service.CheckoutService - Item: Oranges, Quantity: 2, Unit Price: 0.30, Total: 0.60
+2026-01-27 19:00:48.789 [main] DEBUG c.g.discount.BulkDiscountDiscount - No discount applied for Oranges - quantity 2 is less than required 3
+2026-01-27 19:00:48.789 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 0.60, Total Discount: 0, Final Total: 0.60
+2026-01-27 19:00:48.791 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:00:48.791 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:00:48.791 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:00:48.791 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 2 unique items
+2026-01-27 19:00:48.792 [main] DEBUG com.grocery.service.CheckoutService - Item: Bananas, Quantity: 3, Unit Price: 0.50, Total: 1.50
+2026-01-27 19:00:48.792 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Bananas: quantity=3, freeItems=1, discountAmount=0.50
+2026-01-27 19:00:48.792 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Bananas: -£0.50
+2026-01-27 19:00:48.793 [main] DEBUG com.grocery.service.CheckoutService - Item: Oranges, Quantity: 3, Unit Price: 0.30, Total: 0.90
+2026-01-27 19:00:48.793 [main] DEBUG c.g.discount.BulkDiscountDiscount - Discount applied for Oranges: quantity=3, discountGroups=1, remainder=0, discountAmount=0.15
+2026-01-27 19:00:48.794 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Oranges: -£0.15
+2026-01-27 19:00:48.794 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 2.40, Total Discount: 0.65, Final Total: 1.75
+2026-01-27 19:00:48.794 [main] DEBUG c.grocery.receipt.ReceiptFormatter - Formatting receipt from checkout result with 2 items
+2026-01-27 19:00:48.804 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:00:48.805 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Banana: quantity=3, freeItems=1, discountAmount=1.00
+2026-01-27 19:00:48.806 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:00:48.806 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - No discount applied for Banana - quantity 2 is less than 3
+2026-01-27 19:00:48.807 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:00:48.807 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - No discount applied for Banana - quantity 1 is less than 3
+2026-01-27 19:00:48.809 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:00:48.809 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Banana: quantity=4, freeItems=1, discountAmount=0.50
+2026-01-27 19:00:48.811 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:00:48.814 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:00:48.814 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Banana: quantity=6, freeItems=2, discountAmount=1.00
+2026-01-27 19:00:48.816 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:00:48.817 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:00:48.818 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Banana: quantity=3, freeItems=1, discountAmount=0.50
+2026-01-27 19:00:48.821 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:00:48.823 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:00:48.825 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:00:48.828 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:00:48.828 [main] DEBUG c.g.discount.BulkDiscountDiscount - Discount applied for Orange: quantity=4, discountGroups=1, remainder=1, discountAmount=0.15
+2026-01-27 19:00:48.830 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:00:48.836 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:00:48.836 [main] DEBUG c.g.discount.BulkDiscountDiscount - Discount applied for Orange: quantity=6, discountGroups=2, remainder=0, discountAmount=0.30
+2026-01-27 19:00:48.838 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:00:48.838 [main] DEBUG c.g.discount.BulkDiscountDiscount - No discount applied for Orange - quantity 2 is less than required 3
+2026-01-27 19:00:48.840 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:00:48.842 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:00:48.844 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:00:48.844 [main] DEBUG c.g.discount.BulkDiscountDiscount - Discount applied for Orange: quantity=3, discountGroups=1, remainder=0, discountAmount=0.15
+2026-01-27 19:00:48.849 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:00:48.850 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 1 discounts
+2026-01-27 19:00:48.850 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 2 unique items
+2026-01-27 19:00:48.850 [main] DEBUG com.grocery.service.CheckoutService - Item: Banana, Quantity: 3, Unit Price: 0.50, Total: 1.50
+2026-01-27 19:00:48.850 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Banana: quantity=3, freeItems=1, discountAmount=0.50
+2026-01-27 19:00:48.850 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Banana: -£0.50
+2026-01-27 19:00:48.850 [main] DEBUG com.grocery.service.CheckoutService - Item: Orange, Quantity: 2, Unit Price: 0.30, Total: 0.60
+2026-01-27 19:00:48.850 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 2.10, Total Discount: 0.50, Final Total: 1.60
+2026-01-27 19:00:48.850 [main] DEBUG c.grocery.receipt.ReceiptFormatter - Formatting receipt from checkout result with 2 items
+2026-01-27 19:00:48.857 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 0 discounts
+2026-01-27 19:00:48.857 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:00:48.857 [main] DEBUG com.grocery.service.CheckoutService - Item: Banana, Quantity: 1, Unit Price: 0.50, Total: 0.50
+2026-01-27 19:00:48.857 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 0.50, Total Discount: 0, Final Total: 0.50
+2026-01-27 19:00:48.859 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:00:48.859 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 1 discounts
+2026-01-27 19:00:48.859 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:00:48.859 [main] DEBUG com.grocery.service.CheckoutService - Item: Banana, Quantity: 3, Unit Price: 0.50, Total: 1.50
+2026-01-27 19:00:48.859 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Banana: quantity=3, freeItems=1, discountAmount=0.50
+2026-01-27 19:00:48.859 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Banana: -£0.50
+2026-01-27 19:00:48.859 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 1.50, Total Discount: 0.50, Final Total: 1.00
+2026-01-27 19:00:48.859 [main] DEBUG c.grocery.receipt.ReceiptFormatter - Formatting receipt from checkout result with 1 items
+2026-01-27 19:00:48.867 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 0 discounts
+2026-01-27 19:00:48.867 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:00:48.868 [main] DEBUG com.grocery.service.CheckoutService - Item: Banana, Quantity: 1, Unit Price: 0.50, Total: 0.50
+2026-01-27 19:00:48.868 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 0.50, Total Discount: 0, Final Total: 0.50
+2026-01-27 19:00:48.868 [main] DEBUG c.grocery.receipt.ReceiptFormatter - Formatting receipt from checkout result with 1 items
+2026-01-27 19:00:48.965 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:00:48.966 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:00:48.966 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:00:48.966 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 2 unique items
+2026-01-27 19:00:48.966 [main] DEBUG com.grocery.service.CheckoutService - Item: Banana, Quantity: 3, Unit Price: 0.50, Total: 1.50
+2026-01-27 19:00:48.967 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Banana: quantity=3, freeItems=1, discountAmount=0.50
+2026-01-27 19:00:48.967 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Banana: -£0.50
+2026-01-27 19:00:48.967 [main] DEBUG com.grocery.service.CheckoutService - Item: Orange, Quantity: 3, Unit Price: 0.30, Total: 0.90
+2026-01-27 19:00:48.967 [main] DEBUG c.g.discount.BulkDiscountDiscount - Discount applied for Orange: quantity=3, discountGroups=1, remainder=0, discountAmount=0.15
+2026-01-27 19:00:48.967 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Orange: -£0.15
+2026-01-27 19:00:48.967 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 2.40, Total Discount: 0.65, Final Total: 1.75
+2026-01-27 19:00:48.968 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:00:48.969 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:00:48.969 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:00:48.969 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:00:48.969 [main] DEBUG com.grocery.service.CheckoutService - Item: Banana, Quantity: 3, Unit Price: 0.50, Total: 1.50
+2026-01-27 19:00:48.969 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Banana: quantity=3, freeItems=1, discountAmount=0.50
+2026-01-27 19:00:48.969 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Banana: -£0.50
+2026-01-27 19:00:48.972 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 1.50, Total Discount: 0.50, Final Total: 1.00
+2026-01-27 19:00:48.975 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:00:48.975 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:00:48.976 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:00:48.976 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:00:48.976 [main] DEBUG com.grocery.service.CheckoutService - Item: Orange, Quantity: 3, Unit Price: 0.30, Total: 0.90
+2026-01-27 19:00:48.976 [main] DEBUG c.g.discount.BulkDiscountDiscount - Discount applied for Orange: quantity=3, discountGroups=1, remainder=0, discountAmount=0.15
+2026-01-27 19:00:48.977 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Orange: -£0.15
+2026-01-27 19:00:48.977 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 0.90, Total Discount: 0.15, Final Total: 0.75
+2026-01-27 19:00:48.978 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:00:48.978 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:00:48.979 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:00:48.979 [main] WARN  com.grocery.service.CheckoutService - Attempting to process checkout for empty basket
+2026-01-27 19:00:48.982 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:00:48.982 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:00:48.982 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:00:48.983 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 3 unique items
+2026-01-27 19:00:48.984 [main] DEBUG com.grocery.service.CheckoutService - Item: Banana, Quantity: 2, Unit Price: 0.50, Total: 1.00
+2026-01-27 19:00:48.984 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - No discount applied for Banana - quantity 2 is less than 3
+2026-01-27 19:00:48.984 [main] DEBUG com.grocery.service.CheckoutService - Item: Apple, Quantity: 1, Unit Price: 0.60, Total: 0.60
+2026-01-27 19:00:48.984 [main] DEBUG com.grocery.service.CheckoutService - Item: Orange, Quantity: 4, Unit Price: 0.30, Total: 1.20
+2026-01-27 19:00:48.984 [main] DEBUG c.g.discount.BulkDiscountDiscount - Discount applied for Orange: quantity=4, discountGroups=1, remainder=1, discountAmount=0.15
+2026-01-27 19:00:48.984 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Orange: -£0.15
+2026-01-27 19:00:48.984 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 2.80, Total Discount: 0.15, Final Total: 2.65
+2026-01-27 19:00:48.985 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:00:48.986 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:00:48.986 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:00:48.986 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:00:48.987 [main] DEBUG com.grocery.service.CheckoutService - Item: Apple, Quantity: 1, Unit Price: 0.60, Total: 0.60
+2026-01-27 19:00:48.987 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 0.60, Total Discount: 0, Final Total: 0.60
+2026-01-27 19:00:48.988 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:00:48.988 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:00:48.988 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:00:48.990 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:00:48.990 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:00:48.990 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:00:48.992 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:00:48.992 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:00:48.992 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:00:48.992 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:00:48.992 [main] DEBUG com.grocery.service.CheckoutService - Item: Apple, Quantity: 2, Unit Price: 0.60, Total: 1.20
+2026-01-27 19:00:48.992 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 1.20, Total Discount: 0, Final Total: 1.20
+2026-01-27 19:00:57.088 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:00:57.090 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:00:57.090 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:00:57.092 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 2 unique items
+2026-01-27 19:00:57.094 [main] DEBUG com.grocery.service.CheckoutService - Item: Banana, Quantity: 3, Unit Price: 0.50, Total: 1.50
+2026-01-27 19:00:57.094 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Banana: quantity=3, freeItems=1, discountAmount=0.50
+2026-01-27 19:00:57.094 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Banana: -£0.50
+2026-01-27 19:00:57.094 [main] DEBUG com.grocery.service.CheckoutService - Item: Orange, Quantity: 3, Unit Price: 0.30, Total: 0.90
+2026-01-27 19:00:57.094 [main] DEBUG c.g.discount.BulkDiscountDiscount - Discount applied for Orange: quantity=3, discountGroups=1, remainder=0, discountAmount=0.15
+2026-01-27 19:00:57.096 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Orange: -£0.15
+2026-01-27 19:00:57.096 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 2.40, Total Discount: 0.65, Final Total: 1.75
+2026-01-27 19:00:57.105 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:00:57.105 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:00:57.106 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:00:57.106 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:00:57.106 [main] DEBUG com.grocery.service.CheckoutService - Item: Banana, Quantity: 3, Unit Price: 0.50, Total: 1.50
+2026-01-27 19:00:57.106 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Banana: quantity=3, freeItems=1, discountAmount=0.50
+2026-01-27 19:00:57.106 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Banana: -£0.50
+2026-01-27 19:00:57.106 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 1.50, Total Discount: 0.50, Final Total: 1.00
+2026-01-27 19:00:57.108 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:00:57.108 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:00:57.108 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:00:57.108 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:00:57.108 [main] DEBUG com.grocery.service.CheckoutService - Item: Orange, Quantity: 3, Unit Price: 0.30, Total: 0.90
+2026-01-27 19:00:57.109 [main] DEBUG c.g.discount.BulkDiscountDiscount - Discount applied for Orange: quantity=3, discountGroups=1, remainder=0, discountAmount=0.15
+2026-01-27 19:00:57.109 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Orange: -£0.15
+2026-01-27 19:00:57.109 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 0.90, Total Discount: 0.15, Final Total: 0.75
+2026-01-27 19:00:57.110 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:00:57.110 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:00:57.110 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:00:57.111 [main] WARN  com.grocery.service.CheckoutService - Attempting to process checkout for empty basket
+2026-01-27 19:00:57.113 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:00:57.113 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:00:57.113 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:00:57.113 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 3 unique items
+2026-01-27 19:00:57.113 [main] DEBUG com.grocery.service.CheckoutService - Item: Banana, Quantity: 2, Unit Price: 0.50, Total: 1.00
+2026-01-27 19:00:57.113 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - No discount applied for Banana - quantity 2 is less than 3
+2026-01-27 19:00:57.113 [main] DEBUG com.grocery.service.CheckoutService - Item: Apple, Quantity: 1, Unit Price: 0.60, Total: 0.60
+2026-01-27 19:00:57.114 [main] DEBUG com.grocery.service.CheckoutService - Item: Orange, Quantity: 4, Unit Price: 0.30, Total: 1.20
+2026-01-27 19:00:57.114 [main] DEBUG c.g.discount.BulkDiscountDiscount - Discount applied for Orange: quantity=4, discountGroups=1, remainder=1, discountAmount=0.15
+2026-01-27 19:00:57.114 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Orange: -£0.15
+2026-01-27 19:00:57.114 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 2.80, Total Discount: 0.15, Final Total: 2.65
+2026-01-27 19:00:57.116 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:00:57.116 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:00:57.116 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:00:57.116 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:00:57.117 [main] DEBUG com.grocery.service.CheckoutService - Item: Apple, Quantity: 1, Unit Price: 0.60, Total: 0.60
+2026-01-27 19:00:57.117 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 0.60, Total Discount: 0, Final Total: 0.60
+2026-01-27 19:00:57.118 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:00:57.118 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:00:57.118 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:00:57.120 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:00:57.121 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:00:57.121 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:00:57.122 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:00:57.123 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:00:57.123 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:00:57.123 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:00:57.123 [main] DEBUG com.grocery.service.CheckoutService - Item: Apple, Quantity: 2, Unit Price: 0.60, Total: 1.20
+2026-01-27 19:00:57.123 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 1.20, Total Discount: 0, Final Total: 1.20
+2026-01-27 19:01:33.611 [main] INFO  com.grocery.GroceryCheckoutApp - Starting Grocery Store Checkout System application
+2026-01-27 19:01:33.618 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:01:33.620 [main] DEBUG c.g.discount.BulkDiscountDiscount - Created BulkDiscountDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:01:33.621 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:01:33.622 [main] INFO  com.grocery.GroceryCheckoutApp - Grocery Checkout System initialized
+2026-01-27 19:01:33.623 [main] INFO  com.grocery.GroceryCheckoutApp - Starting Grocery Checkout System
+2026-01-27 19:01:40.098 [main] WARN  com.grocery.GroceryCheckoutApp - Invalid menu option selected: 1121
+2026-01-27 19:07:15.565 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:07:15.567 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:07:15.567 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:07:15.572 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 2 unique items
+2026-01-27 19:07:15.574 [main] DEBUG com.grocery.service.CheckoutService - Item: Bananas, Quantity: 4, Unit Price: 0.50, Total: 2.00
+2026-01-27 19:07:15.574 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Bananas: quantity=4, freeItems=1, discountAmount=0.50
+2026-01-27 19:07:15.575 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Bananas: -£0.50
+2026-01-27 19:07:15.575 [main] DEBUG com.grocery.service.CheckoutService - Item: Oranges, Quantity: 5, Unit Price: 0.30, Total: 1.50
+2026-01-27 19:07:15.575 [main] DEBUG com.grocery.discount.BulkDiscount - Discount applied for Oranges: quantity=5, discountGroups=1, remainder=2, discountAmount=0.15
+2026-01-27 19:07:15.578 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Oranges: -£0.15
+2026-01-27 19:07:15.579 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 3.50, Total Discount: 0.65, Final Total: 2.85
+2026-01-27 19:07:15.581 [main] DEBUG c.grocery.receipt.ReceiptFormatter - Formatting receipt from checkout result with 2 items
+2026-01-27 19:07:15.590 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:07:15.590 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:07:15.591 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:07:15.591 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:07:15.591 [main] DEBUG com.grocery.service.CheckoutService - Item: Oranges, Quantity: 3, Unit Price: 0.30, Total: 0.90
+2026-01-27 19:07:15.591 [main] DEBUG com.grocery.discount.BulkDiscount - Discount applied for Oranges: quantity=3, discountGroups=1, remainder=0, discountAmount=0.15
+2026-01-27 19:07:15.592 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Oranges: -£0.15
+2026-01-27 19:07:15.592 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 0.90, Total Discount: 0.15, Final Total: 0.75
+2026-01-27 19:07:15.595 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:07:15.596 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:07:15.596 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:07:15.596 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:07:15.597 [main] DEBUG com.grocery.service.CheckoutService - Item: Bananas, Quantity: 2, Unit Price: 0.50, Total: 1.00
+2026-01-27 19:07:15.597 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - No discount applied for Bananas - quantity 2 is less than 3
+2026-01-27 19:07:15.597 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 1.00, Total Discount: 0, Final Total: 1.00
+2026-01-27 19:07:15.599 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:07:15.599 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:07:15.599 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:07:15.600 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:07:15.600 [main] DEBUG com.grocery.service.CheckoutService - Item: Bananas, Quantity: 3, Unit Price: 0.50, Total: 1.50
+2026-01-27 19:07:15.600 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Bananas: quantity=3, freeItems=1, discountAmount=0.50
+2026-01-27 19:07:15.600 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Bananas: -£0.50
+2026-01-27 19:07:15.601 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 1.50, Total Discount: 0.50, Final Total: 1.00
+2026-01-27 19:07:15.603 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:07:15.603 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:07:15.603 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:07:15.604 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:07:15.604 [main] DEBUG com.grocery.service.CheckoutService - Item: Oranges, Quantity: 12, Unit Price: 0.30, Total: 3.60
+2026-01-27 19:07:15.604 [main] DEBUG com.grocery.discount.BulkDiscount - Discount applied for Oranges: quantity=12, discountGroups=4, remainder=0, discountAmount=0.60
+2026-01-27 19:07:15.604 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Oranges: -£0.60
+2026-01-27 19:07:15.604 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 3.60, Total Discount: 0.60, Final Total: 3.00
+2026-01-27 19:07:15.606 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:07:15.606 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:07:15.606 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:07:15.606 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 3 unique items
+2026-01-27 19:07:15.606 [main] DEBUG com.grocery.service.CheckoutService - Item: Apples, Quantity: 2, Unit Price: 0.60, Total: 1.20
+2026-01-27 19:07:15.607 [main] DEBUG com.grocery.service.CheckoutService - Item: Lemons, Quantity: 4, Unit Price: 0.25, Total: 1.00
+2026-01-27 19:07:15.607 [main] DEBUG com.grocery.service.CheckoutService - Item: Peaches, Quantity: 1, Unit Price: 0.75, Total: 0.75
+2026-01-27 19:07:15.607 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 2.95, Total Discount: 0, Final Total: 2.95
+2026-01-27 19:07:15.609 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:07:15.609 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:07:15.609 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:07:15.609 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 5 unique items
+2026-01-27 19:07:15.610 [main] DEBUG com.grocery.service.CheckoutService - Item: Bananas, Quantity: 6, Unit Price: 0.50, Total: 3.00
+2026-01-27 19:07:15.610 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Bananas: quantity=6, freeItems=2, discountAmount=1.00
+2026-01-27 19:07:15.610 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Bananas: -£1.00
+2026-01-27 19:07:15.610 [main] DEBUG com.grocery.service.CheckoutService - Item: Oranges, Quantity: 9, Unit Price: 0.30, Total: 2.70
+2026-01-27 19:07:15.610 [main] DEBUG com.grocery.discount.BulkDiscount - Discount applied for Oranges: quantity=9, discountGroups=3, remainder=0, discountAmount=0.45
+2026-01-27 19:07:15.610 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Oranges: -£0.45
+2026-01-27 19:07:15.610 [main] DEBUG com.grocery.service.CheckoutService - Item: Apples, Quantity: 2, Unit Price: 0.60, Total: 1.20
+2026-01-27 19:07:15.611 [main] DEBUG com.grocery.service.CheckoutService - Item: Lemons, Quantity: 3, Unit Price: 0.25, Total: 0.75
+2026-01-27 19:07:15.611 [main] DEBUG com.grocery.service.CheckoutService - Item: Peaches, Quantity: 1, Unit Price: 0.75, Total: 0.75
+2026-01-27 19:07:15.612 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 8.40, Total Discount: 1.45, Final Total: 6.95
+2026-01-27 19:07:15.613 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:07:15.614 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:07:15.614 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:07:15.614 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:07:15.614 [main] DEBUG com.grocery.service.CheckoutService - Item: Bananas, Quantity: 10, Unit Price: 0.50, Total: 5.00
+2026-01-27 19:07:15.614 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Bananas: quantity=10, freeItems=3, discountAmount=1.50
+2026-01-27 19:07:15.614 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Bananas: -£1.50
+2026-01-27 19:07:15.615 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 5.00, Total Discount: 1.50, Final Total: 3.50
+2026-01-27 19:07:15.616 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:07:15.616 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:07:15.616 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:07:15.616 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 3 unique items
+2026-01-27 19:07:15.617 [main] DEBUG com.grocery.service.CheckoutService - Item: Bananas, Quantity: 3, Unit Price: 0.50, Total: 1.50
+2026-01-27 19:07:15.617 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Bananas: quantity=3, freeItems=1, discountAmount=0.50
+2026-01-27 19:07:15.617 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Bananas: -£0.50
+2026-01-27 19:07:15.617 [main] DEBUG com.grocery.service.CheckoutService - Item: Oranges, Quantity: 4, Unit Price: 0.30, Total: 1.20
+2026-01-27 19:07:15.617 [main] DEBUG com.grocery.discount.BulkDiscount - Discount applied for Oranges: quantity=4, discountGroups=1, remainder=1, discountAmount=0.15
+2026-01-27 19:07:15.617 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Oranges: -£0.15
+2026-01-27 19:07:15.617 [main] DEBUG com.grocery.service.CheckoutService - Item: Apples, Quantity: 1, Unit Price: 0.60, Total: 0.60
+2026-01-27 19:07:15.617 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 3.30, Total Discount: 0.65, Final Total: 2.65
+2026-01-27 19:07:15.619 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:07:15.619 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:07:15.619 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:07:15.619 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:07:15.619 [main] DEBUG com.grocery.service.CheckoutService - Item: Oranges, Quantity: 2, Unit Price: 0.30, Total: 0.60
+2026-01-27 19:07:15.619 [main] DEBUG com.grocery.discount.BulkDiscount - No discount applied for Oranges - quantity 2 is less than required 3
+2026-01-27 19:07:15.619 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 0.60, Total Discount: 0, Final Total: 0.60
+2026-01-27 19:07:15.621 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:07:15.622 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:07:15.622 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:07:15.623 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 2 unique items
+2026-01-27 19:07:15.623 [main] DEBUG com.grocery.service.CheckoutService - Item: Bananas, Quantity: 3, Unit Price: 0.50, Total: 1.50
+2026-01-27 19:07:15.623 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Bananas: quantity=3, freeItems=1, discountAmount=0.50
+2026-01-27 19:07:15.623 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Bananas: -£0.50
+2026-01-27 19:07:15.623 [main] DEBUG com.grocery.service.CheckoutService - Item: Oranges, Quantity: 3, Unit Price: 0.30, Total: 0.90
+2026-01-27 19:07:15.623 [main] DEBUG com.grocery.discount.BulkDiscount - Discount applied for Oranges: quantity=3, discountGroups=1, remainder=0, discountAmount=0.15
+2026-01-27 19:07:15.624 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Oranges: -£0.15
+2026-01-27 19:07:15.624 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 2.40, Total Discount: 0.65, Final Total: 1.75
+2026-01-27 19:07:15.624 [main] DEBUG c.grocery.receipt.ReceiptFormatter - Formatting receipt from checkout result with 2 items
+2026-01-27 19:07:15.631 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:07:15.631 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Banana: quantity=3, freeItems=1, discountAmount=1.00
+2026-01-27 19:07:15.632 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:07:15.633 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - No discount applied for Banana - quantity 2 is less than 3
+2026-01-27 19:07:15.635 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:07:15.635 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - No discount applied for Banana - quantity 1 is less than 3
+2026-01-27 19:07:15.636 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:07:15.636 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Banana: quantity=4, freeItems=1, discountAmount=0.50
+2026-01-27 19:07:15.637 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:07:15.639 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:07:15.640 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Banana: quantity=6, freeItems=2, discountAmount=1.00
+2026-01-27 19:07:15.641 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:07:15.642 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:07:15.642 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Banana: quantity=3, freeItems=1, discountAmount=0.50
+2026-01-27 19:07:15.647 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:07:15.650 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:07:15.652 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:07:15.654 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:07:15.655 [main] DEBUG com.grocery.discount.BulkDiscount - Discount applied for Orange: quantity=4, discountGroups=1, remainder=1, discountAmount=0.15
+2026-01-27 19:07:15.657 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:07:15.662 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:07:15.662 [main] DEBUG com.grocery.discount.BulkDiscount - Discount applied for Orange: quantity=6, discountGroups=2, remainder=0, discountAmount=0.30
+2026-01-27 19:07:15.665 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:07:15.665 [main] DEBUG com.grocery.discount.BulkDiscount - No discount applied for Orange - quantity 2 is less than required 3
+2026-01-27 19:07:15.667 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:07:15.670 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:07:15.672 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:07:15.672 [main] DEBUG com.grocery.discount.BulkDiscount - Discount applied for Orange: quantity=3, discountGroups=1, remainder=0, discountAmount=0.15
+2026-01-27 19:07:15.676 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:07:15.676 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 1 discounts
+2026-01-27 19:07:15.676 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 2 unique items
+2026-01-27 19:07:15.676 [main] DEBUG com.grocery.service.CheckoutService - Item: Banana, Quantity: 3, Unit Price: 0.50, Total: 1.50
+2026-01-27 19:07:15.676 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Banana: quantity=3, freeItems=1, discountAmount=0.50
+2026-01-27 19:07:15.676 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Banana: -£0.50
+2026-01-27 19:07:15.676 [main] DEBUG com.grocery.service.CheckoutService - Item: Orange, Quantity: 2, Unit Price: 0.30, Total: 0.60
+2026-01-27 19:07:15.677 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 2.10, Total Discount: 0.50, Final Total: 1.60
+2026-01-27 19:07:15.677 [main] DEBUG c.grocery.receipt.ReceiptFormatter - Formatting receipt from checkout result with 2 items
+2026-01-27 19:07:15.683 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 0 discounts
+2026-01-27 19:07:15.683 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:07:15.683 [main] DEBUG com.grocery.service.CheckoutService - Item: Banana, Quantity: 1, Unit Price: 0.50, Total: 0.50
+2026-01-27 19:07:15.684 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 0.50, Total Discount: 0, Final Total: 0.50
+2026-01-27 19:07:15.686 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:07:15.686 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 1 discounts
+2026-01-27 19:07:15.686 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:07:15.686 [main] DEBUG com.grocery.service.CheckoutService - Item: Banana, Quantity: 3, Unit Price: 0.50, Total: 1.50
+2026-01-27 19:07:15.687 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Banana: quantity=3, freeItems=1, discountAmount=0.50
+2026-01-27 19:07:15.687 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Banana: -£0.50
+2026-01-27 19:07:15.687 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 1.50, Total Discount: 0.50, Final Total: 1.00
+2026-01-27 19:07:15.687 [main] DEBUG c.grocery.receipt.ReceiptFormatter - Formatting receipt from checkout result with 1 items
+2026-01-27 19:07:15.696 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 0 discounts
+2026-01-27 19:07:15.697 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:07:15.697 [main] DEBUG com.grocery.service.CheckoutService - Item: Banana, Quantity: 1, Unit Price: 0.50, Total: 0.50
+2026-01-27 19:07:15.697 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 0.50, Total Discount: 0, Final Total: 0.50
+2026-01-27 19:07:15.697 [main] DEBUG c.grocery.receipt.ReceiptFormatter - Formatting receipt from checkout result with 1 items
+2026-01-27 19:07:15.792 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:07:15.793 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:07:15.793 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:07:15.793 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 2 unique items
+2026-01-27 19:07:15.794 [main] DEBUG com.grocery.service.CheckoutService - Item: Banana, Quantity: 3, Unit Price: 0.50, Total: 1.50
+2026-01-27 19:07:15.794 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Banana: quantity=3, freeItems=1, discountAmount=0.50
+2026-01-27 19:07:15.794 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Banana: -£0.50
+2026-01-27 19:07:15.794 [main] DEBUG com.grocery.service.CheckoutService - Item: Orange, Quantity: 3, Unit Price: 0.30, Total: 0.90
+2026-01-27 19:07:15.794 [main] DEBUG com.grocery.discount.BulkDiscount - Discount applied for Orange: quantity=3, discountGroups=1, remainder=0, discountAmount=0.15
+2026-01-27 19:07:15.794 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Orange: -£0.15
+2026-01-27 19:07:15.794 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 2.40, Total Discount: 0.65, Final Total: 1.75
+2026-01-27 19:07:15.796 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:07:15.796 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:07:15.797 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:07:15.797 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:07:15.797 [main] DEBUG com.grocery.service.CheckoutService - Item: Banana, Quantity: 3, Unit Price: 0.50, Total: 1.50
+2026-01-27 19:07:15.797 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Banana: quantity=3, freeItems=1, discountAmount=0.50
+2026-01-27 19:07:15.797 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Banana: -£0.50
+2026-01-27 19:07:15.797 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 1.50, Total Discount: 0.50, Final Total: 1.00
+2026-01-27 19:07:15.798 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:07:15.798 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:07:15.798 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:07:15.799 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:07:15.799 [main] DEBUG com.grocery.service.CheckoutService - Item: Orange, Quantity: 3, Unit Price: 0.30, Total: 0.90
+2026-01-27 19:07:15.799 [main] DEBUG com.grocery.discount.BulkDiscount - Discount applied for Orange: quantity=3, discountGroups=1, remainder=0, discountAmount=0.15
+2026-01-27 19:07:15.800 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Orange: -£0.15
+2026-01-27 19:07:15.800 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 0.90, Total Discount: 0.15, Final Total: 0.75
+2026-01-27 19:07:15.801 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:07:15.801 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:07:15.802 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:07:15.802 [main] WARN  com.grocery.service.CheckoutService - Attempting to process checkout for empty basket
+2026-01-27 19:07:15.805 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:07:15.805 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:07:15.805 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:07:15.807 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 3 unique items
+2026-01-27 19:07:15.809 [main] DEBUG com.grocery.service.CheckoutService - Item: Banana, Quantity: 2, Unit Price: 0.50, Total: 1.00
+2026-01-27 19:07:15.809 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - No discount applied for Banana - quantity 2 is less than 3
+2026-01-27 19:07:15.809 [main] DEBUG com.grocery.service.CheckoutService - Item: Apple, Quantity: 1, Unit Price: 0.60, Total: 0.60
+2026-01-27 19:07:15.809 [main] DEBUG com.grocery.service.CheckoutService - Item: Orange, Quantity: 4, Unit Price: 0.30, Total: 1.20
+2026-01-27 19:07:15.809 [main] DEBUG com.grocery.discount.BulkDiscount - Discount applied for Orange: quantity=4, discountGroups=1, remainder=1, discountAmount=0.15
+2026-01-27 19:07:15.810 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Orange: -£0.15
+2026-01-27 19:07:15.810 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 2.80, Total Discount: 0.15, Final Total: 2.65
+2026-01-27 19:07:15.812 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:07:15.812 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:07:15.812 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:07:15.812 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:07:15.813 [main] DEBUG com.grocery.service.CheckoutService - Item: Apple, Quantity: 1, Unit Price: 0.60, Total: 0.60
+2026-01-27 19:07:15.813 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 0.60, Total Discount: 0, Final Total: 0.60
+2026-01-27 19:07:15.814 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:07:15.814 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:07:15.814 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:07:15.816 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:07:15.817 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:07:15.817 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:07:15.819 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:07:15.819 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:07:15.819 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:07:15.819 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:07:15.819 [main] DEBUG com.grocery.service.CheckoutService - Item: Apple, Quantity: 2, Unit Price: 0.60, Total: 1.20
+2026-01-27 19:07:15.819 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 1.20, Total Discount: 0, Final Total: 1.20
+2026-01-27 19:08:26.068 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:08:26.071 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:08:26.071 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:08:26.076 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 2 unique items
+2026-01-27 19:08:26.077 [main] DEBUG com.grocery.service.CheckoutService - Item: Bananas, Quantity: 4, Unit Price: 0.50, Total: 2.00
+2026-01-27 19:08:26.077 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Bananas: quantity=4, freeItems=1, discountAmount=0.50
+2026-01-27 19:08:26.078 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Bananas: -£0.50
+2026-01-27 19:08:26.078 [main] DEBUG com.grocery.service.CheckoutService - Item: Oranges, Quantity: 5, Unit Price: 0.30, Total: 1.50
+2026-01-27 19:08:26.078 [main] DEBUG com.grocery.discount.BulkDiscount - Discount applied for Oranges: quantity=5, discountGroups=1, remainder=2, discountAmount=0.15
+2026-01-27 19:08:26.080 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Oranges: -£0.15
+2026-01-27 19:08:26.081 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 3.50, Total Discount: 0.65, Final Total: 2.85
+2026-01-27 19:08:26.083 [main] DEBUG c.grocery.receipt.ReceiptFormatter - Formatting receipt from checkout result with 2 items
+2026-01-27 19:08:26.092 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:08:26.092 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:08:26.092 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:08:26.093 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:08:26.093 [main] DEBUG com.grocery.service.CheckoutService - Item: Oranges, Quantity: 3, Unit Price: 0.30, Total: 0.90
+2026-01-27 19:08:26.093 [main] DEBUG com.grocery.discount.BulkDiscount - Discount applied for Oranges: quantity=3, discountGroups=1, remainder=0, discountAmount=0.15
+2026-01-27 19:08:26.093 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Oranges: -£0.15
+2026-01-27 19:08:26.093 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 0.90, Total Discount: 0.15, Final Total: 0.75
+2026-01-27 19:08:26.095 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:08:26.096 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:08:26.096 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:08:26.096 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:08:26.096 [main] DEBUG com.grocery.service.CheckoutService - Item: Bananas, Quantity: 2, Unit Price: 0.50, Total: 1.00
+2026-01-27 19:08:26.097 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - No discount applied for Bananas - quantity 2 is less than 3
+2026-01-27 19:08:26.097 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 1.00, Total Discount: 0, Final Total: 1.00
+2026-01-27 19:08:26.099 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:08:26.099 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:08:26.099 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:08:26.099 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:08:26.100 [main] DEBUG com.grocery.service.CheckoutService - Item: Bananas, Quantity: 3, Unit Price: 0.50, Total: 1.50
+2026-01-27 19:08:26.100 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Bananas: quantity=3, freeItems=1, discountAmount=0.50
+2026-01-27 19:08:26.100 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Bananas: -£0.50
+2026-01-27 19:08:26.100 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 1.50, Total Discount: 0.50, Final Total: 1.00
+2026-01-27 19:08:26.101 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:08:26.102 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:08:26.102 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:08:26.102 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:08:26.102 [main] DEBUG com.grocery.service.CheckoutService - Item: Oranges, Quantity: 12, Unit Price: 0.30, Total: 3.60
+2026-01-27 19:08:26.102 [main] DEBUG com.grocery.discount.BulkDiscount - Discount applied for Oranges: quantity=12, discountGroups=4, remainder=0, discountAmount=0.60
+2026-01-27 19:08:26.102 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Oranges: -£0.60
+2026-01-27 19:08:26.102 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 3.60, Total Discount: 0.60, Final Total: 3.00
+2026-01-27 19:08:26.104 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:08:26.104 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:08:26.104 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:08:26.104 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 3 unique items
+2026-01-27 19:08:26.104 [main] DEBUG com.grocery.service.CheckoutService - Item: Apples, Quantity: 2, Unit Price: 0.60, Total: 1.20
+2026-01-27 19:08:26.104 [main] DEBUG com.grocery.service.CheckoutService - Item: Lemons, Quantity: 4, Unit Price: 0.25, Total: 1.00
+2026-01-27 19:08:26.104 [main] DEBUG com.grocery.service.CheckoutService - Item: Peaches, Quantity: 1, Unit Price: 0.75, Total: 0.75
+2026-01-27 19:08:26.105 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 2.95, Total Discount: 0, Final Total: 2.95
+2026-01-27 19:08:26.106 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:08:26.107 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:08:26.107 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:08:26.107 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 5 unique items
+2026-01-27 19:08:26.107 [main] DEBUG com.grocery.service.CheckoutService - Item: Bananas, Quantity: 6, Unit Price: 0.50, Total: 3.00
+2026-01-27 19:08:26.107 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Bananas: quantity=6, freeItems=2, discountAmount=1.00
+2026-01-27 19:08:26.107 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Bananas: -£1.00
+2026-01-27 19:08:26.107 [main] DEBUG com.grocery.service.CheckoutService - Item: Oranges, Quantity: 9, Unit Price: 0.30, Total: 2.70
+2026-01-27 19:08:26.108 [main] DEBUG com.grocery.discount.BulkDiscount - Discount applied for Oranges: quantity=9, discountGroups=3, remainder=0, discountAmount=0.45
+2026-01-27 19:08:26.108 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Oranges: -£0.45
+2026-01-27 19:08:26.108 [main] DEBUG com.grocery.service.CheckoutService - Item: Apples, Quantity: 2, Unit Price: 0.60, Total: 1.20
+2026-01-27 19:08:26.108 [main] DEBUG com.grocery.service.CheckoutService - Item: Lemons, Quantity: 3, Unit Price: 0.25, Total: 0.75
+2026-01-27 19:08:26.108 [main] DEBUG com.grocery.service.CheckoutService - Item: Peaches, Quantity: 1, Unit Price: 0.75, Total: 0.75
+2026-01-27 19:08:26.108 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 8.40, Total Discount: 1.45, Final Total: 6.95
+2026-01-27 19:08:26.109 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:08:26.110 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:08:26.110 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:08:26.110 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:08:26.110 [main] DEBUG com.grocery.service.CheckoutService - Item: Bananas, Quantity: 10, Unit Price: 0.50, Total: 5.00
+2026-01-27 19:08:26.110 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Bananas: quantity=10, freeItems=3, discountAmount=1.50
+2026-01-27 19:08:26.110 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Bananas: -£1.50
+2026-01-27 19:08:26.110 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 5.00, Total Discount: 1.50, Final Total: 3.50
+2026-01-27 19:08:26.111 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:08:26.112 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:08:26.112 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:08:26.112 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 3 unique items
+2026-01-27 19:08:26.112 [main] DEBUG com.grocery.service.CheckoutService - Item: Bananas, Quantity: 3, Unit Price: 0.50, Total: 1.50
+2026-01-27 19:08:26.112 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Bananas: quantity=3, freeItems=1, discountAmount=0.50
+2026-01-27 19:08:26.112 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Bananas: -£0.50
+2026-01-27 19:08:26.112 [main] DEBUG com.grocery.service.CheckoutService - Item: Oranges, Quantity: 4, Unit Price: 0.30, Total: 1.20
+2026-01-27 19:08:26.112 [main] DEBUG com.grocery.discount.BulkDiscount - Discount applied for Oranges: quantity=4, discountGroups=1, remainder=1, discountAmount=0.15
+2026-01-27 19:08:26.112 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Oranges: -£0.15
+2026-01-27 19:08:26.112 [main] DEBUG com.grocery.service.CheckoutService - Item: Apples, Quantity: 1, Unit Price: 0.60, Total: 0.60
+2026-01-27 19:08:26.113 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 3.30, Total Discount: 0.65, Final Total: 2.65
+2026-01-27 19:08:26.115 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:08:26.115 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:08:26.115 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:08:26.116 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:08:26.116 [main] DEBUG com.grocery.service.CheckoutService - Item: Oranges, Quantity: 2, Unit Price: 0.30, Total: 0.60
+2026-01-27 19:08:26.116 [main] DEBUG com.grocery.discount.BulkDiscount - No discount applied for Oranges - quantity 2 is less than required 3
+2026-01-27 19:08:26.116 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 0.60, Total Discount: 0, Final Total: 0.60
+2026-01-27 19:08:26.120 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:08:26.120 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:08:26.120 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:08:26.121 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 2 unique items
+2026-01-27 19:08:26.121 [main] DEBUG com.grocery.service.CheckoutService - Item: Bananas, Quantity: 3, Unit Price: 0.50, Total: 1.50
+2026-01-27 19:08:26.121 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Bananas: quantity=3, freeItems=1, discountAmount=0.50
+2026-01-27 19:08:26.121 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Bananas: -£0.50
+2026-01-27 19:08:26.121 [main] DEBUG com.grocery.service.CheckoutService - Item: Oranges, Quantity: 3, Unit Price: 0.30, Total: 0.90
+2026-01-27 19:08:26.121 [main] DEBUG com.grocery.discount.BulkDiscount - Discount applied for Oranges: quantity=3, discountGroups=1, remainder=0, discountAmount=0.15
+2026-01-27 19:08:26.121 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Oranges: -£0.15
+2026-01-27 19:08:26.121 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 2.40, Total Discount: 0.65, Final Total: 1.75
+2026-01-27 19:08:26.121 [main] DEBUG c.grocery.receipt.ReceiptFormatter - Formatting receipt from checkout result with 2 items
+2026-01-27 19:08:26.128 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:08:26.128 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Banana: quantity=3, freeItems=1, discountAmount=1.00
+2026-01-27 19:08:26.130 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:08:26.130 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - No discount applied for Banana - quantity 2 is less than 3
+2026-01-27 19:08:26.131 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:08:26.132 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - No discount applied for Banana - quantity 1 is less than 3
+2026-01-27 19:08:26.133 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:08:26.134 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Banana: quantity=4, freeItems=1, discountAmount=0.50
+2026-01-27 19:08:26.137 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:08:26.140 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:08:26.140 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Banana: quantity=6, freeItems=2, discountAmount=1.00
+2026-01-27 19:08:26.142 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:08:26.143 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:08:26.144 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Banana: quantity=3, freeItems=1, discountAmount=0.50
+2026-01-27 19:08:26.149 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:08:26.151 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:08:26.153 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:08:26.155 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:08:26.155 [main] DEBUG com.grocery.discount.BulkDiscount - Discount applied for Orange: quantity=4, discountGroups=1, remainder=1, discountAmount=0.15
+2026-01-27 19:08:26.156 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:08:26.158 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:08:26.159 [main] DEBUG com.grocery.discount.BulkDiscount - Discount applied for Orange: quantity=6, discountGroups=2, remainder=0, discountAmount=0.30
+2026-01-27 19:08:26.161 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:08:26.161 [main] DEBUG com.grocery.discount.BulkDiscount - No discount applied for Orange - quantity 2 is less than required 3
+2026-01-27 19:08:26.163 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:08:26.165 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:08:26.167 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:08:26.167 [main] DEBUG com.grocery.discount.BulkDiscount - Discount applied for Orange: quantity=3, discountGroups=1, remainder=0, discountAmount=0.15
+2026-01-27 19:08:26.173 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:08:26.173 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 1 discounts
+2026-01-27 19:08:26.173 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 2 unique items
+2026-01-27 19:08:26.174 [main] DEBUG com.grocery.service.CheckoutService - Item: Banana, Quantity: 3, Unit Price: 0.50, Total: 1.50
+2026-01-27 19:08:26.174 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Banana: quantity=3, freeItems=1, discountAmount=0.50
+2026-01-27 19:08:26.174 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Banana: -£0.50
+2026-01-27 19:08:26.174 [main] DEBUG com.grocery.service.CheckoutService - Item: Orange, Quantity: 2, Unit Price: 0.30, Total: 0.60
+2026-01-27 19:08:26.174 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 2.10, Total Discount: 0.50, Final Total: 1.60
+2026-01-27 19:08:26.174 [main] DEBUG c.grocery.receipt.ReceiptFormatter - Formatting receipt from checkout result with 2 items
+2026-01-27 19:08:26.181 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 0 discounts
+2026-01-27 19:08:26.181 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:08:26.182 [main] DEBUG com.grocery.service.CheckoutService - Item: Banana, Quantity: 1, Unit Price: 0.50, Total: 0.50
+2026-01-27 19:08:26.182 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 0.50, Total Discount: 0, Final Total: 0.50
+2026-01-27 19:08:26.183 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:08:26.184 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 1 discounts
+2026-01-27 19:08:26.184 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:08:26.184 [main] DEBUG com.grocery.service.CheckoutService - Item: Banana, Quantity: 3, Unit Price: 0.50, Total: 1.50
+2026-01-27 19:08:26.184 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Banana: quantity=3, freeItems=1, discountAmount=0.50
+2026-01-27 19:08:26.184 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Banana: -£0.50
+2026-01-27 19:08:26.184 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 1.50, Total Discount: 0.50, Final Total: 1.00
+2026-01-27 19:08:26.184 [main] DEBUG c.grocery.receipt.ReceiptFormatter - Formatting receipt from checkout result with 1 items
+2026-01-27 19:08:26.194 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 0 discounts
+2026-01-27 19:08:26.194 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:08:26.194 [main] DEBUG com.grocery.service.CheckoutService - Item: Banana, Quantity: 1, Unit Price: 0.50, Total: 0.50
+2026-01-27 19:08:26.194 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 0.50, Total Discount: 0, Final Total: 0.50
+2026-01-27 19:08:26.194 [main] DEBUG c.grocery.receipt.ReceiptFormatter - Formatting receipt from checkout result with 1 items
+2026-01-27 19:08:26.298 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:08:26.299 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:08:26.299 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:08:26.299 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 2 unique items
+2026-01-27 19:08:26.299 [main] DEBUG com.grocery.service.CheckoutService - Item: Banana, Quantity: 3, Unit Price: 0.50, Total: 1.50
+2026-01-27 19:08:26.299 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Banana: quantity=3, freeItems=1, discountAmount=0.50
+2026-01-27 19:08:26.299 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Banana: -£0.50
+2026-01-27 19:08:26.300 [main] DEBUG com.grocery.service.CheckoutService - Item: Orange, Quantity: 3, Unit Price: 0.30, Total: 0.90
+2026-01-27 19:08:26.300 [main] DEBUG com.grocery.discount.BulkDiscount - Discount applied for Orange: quantity=3, discountGroups=1, remainder=0, discountAmount=0.15
+2026-01-27 19:08:26.300 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Orange: -£0.15
+2026-01-27 19:08:26.300 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 2.40, Total Discount: 0.65, Final Total: 1.75
+2026-01-27 19:08:26.305 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:08:26.305 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:08:26.306 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:08:26.306 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:08:26.306 [main] DEBUG com.grocery.service.CheckoutService - Item: Banana, Quantity: 3, Unit Price: 0.50, Total: 1.50
+2026-01-27 19:08:26.306 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Banana: quantity=3, freeItems=1, discountAmount=0.50
+2026-01-27 19:08:26.306 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Banana: -£0.50
+2026-01-27 19:08:26.306 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 1.50, Total Discount: 0.50, Final Total: 1.00
+2026-01-27 19:08:26.308 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:08:26.308 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:08:26.308 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:08:26.308 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:08:26.309 [main] DEBUG com.grocery.service.CheckoutService - Item: Orange, Quantity: 3, Unit Price: 0.30, Total: 0.90
+2026-01-27 19:08:26.309 [main] DEBUG com.grocery.discount.BulkDiscount - Discount applied for Orange: quantity=3, discountGroups=1, remainder=0, discountAmount=0.15
+2026-01-27 19:08:26.309 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Orange: -£0.15
+2026-01-27 19:08:26.309 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 0.90, Total Discount: 0.15, Final Total: 0.75
+2026-01-27 19:08:26.310 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:08:26.311 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:08:26.311 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:08:26.311 [main] WARN  com.grocery.service.CheckoutService - Attempting to process checkout for empty basket
+2026-01-27 19:08:26.313 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:08:26.313 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:08:26.313 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:08:26.314 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 3 unique items
+2026-01-27 19:08:26.314 [main] DEBUG com.grocery.service.CheckoutService - Item: Banana, Quantity: 2, Unit Price: 0.50, Total: 1.00
+2026-01-27 19:08:26.314 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - No discount applied for Banana - quantity 2 is less than 3
+2026-01-27 19:08:26.314 [main] DEBUG com.grocery.service.CheckoutService - Item: Apple, Quantity: 1, Unit Price: 0.60, Total: 0.60
+2026-01-27 19:08:26.314 [main] DEBUG com.grocery.service.CheckoutService - Item: Orange, Quantity: 4, Unit Price: 0.30, Total: 1.20
+2026-01-27 19:08:26.314 [main] DEBUG com.grocery.discount.BulkDiscount - Discount applied for Orange: quantity=4, discountGroups=1, remainder=1, discountAmount=0.15
+2026-01-27 19:08:26.314 [main] INFO  com.grocery.service.CheckoutService - Applied discount '3 for £0.75' to Orange: -£0.15
+2026-01-27 19:08:26.314 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 2.80, Total Discount: 0.15, Final Total: 2.65
+2026-01-27 19:08:26.316 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:08:26.316 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:08:26.317 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:08:26.317 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:08:26.317 [main] DEBUG com.grocery.service.CheckoutService - Item: Apple, Quantity: 1, Unit Price: 0.60, Total: 0.60
+2026-01-27 19:08:26.318 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 0.60, Total Discount: 0, Final Total: 0.60
+2026-01-27 19:08:26.322 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:08:26.322 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:08:26.322 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:08:26.325 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:08:26.325 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:08:26.325 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:08:26.327 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Banana
+2026-01-27 19:08:26.327 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Orange, 3 for £0.75
+2026-01-27 19:08:26.327 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:08:26.328 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:08:26.328 [main] DEBUG com.grocery.service.CheckoutService - Item: Apple, Quantity: 2, Unit Price: 0.60, Total: 1.20
+2026-01-27 19:08:26.328 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 1.20, Total Discount: 0, Final Total: 1.20
+2026-01-27 19:09:41.504 [main] INFO  com.grocery.GroceryCheckoutApp - Starting Grocery Store Checkout System application
+2026-01-27 19:09:41.509 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Created BuyTwoGetOneFreeDiscount for item: Bananas
+2026-01-27 19:09:41.511 [main] DEBUG com.grocery.discount.BulkDiscount - Created BulkDiscount for item: Oranges, 3 for £0.75
+2026-01-27 19:09:41.511 [main] INFO  com.grocery.service.CheckoutService - CheckoutService initialized with 2 discounts
+2026-01-27 19:09:41.512 [main] INFO  com.grocery.GroceryCheckoutApp - Grocery Checkout System initialized
+2026-01-27 19:09:41.512 [main] INFO  com.grocery.GroceryCheckoutApp - Starting Grocery Checkout System
+2026-01-27 19:09:56.821 [main] INFO  com.grocery.GroceryCheckoutApp - Added 5 bananas to basket
+2026-01-27 19:10:00.137 [main] INFO  com.grocery.service.CheckoutService - Processing checkout for basket with 1 unique items
+2026-01-27 19:10:00.150 [main] DEBUG com.grocery.service.CheckoutService - Item: Bananas, Quantity: 5, Unit Price: 0.50, Total: 2.50
+2026-01-27 19:10:00.150 [main] DEBUG c.g.d.BuyTwoGetOneFreeDiscount - Discount applied for Bananas: quantity=5, freeItems=1, discountAmount=0.50
+2026-01-27 19:10:00.151 [main] INFO  com.grocery.service.CheckoutService - Applied discount 'Buy 2 Get 1 Free' to Bananas: -£0.50
+2026-01-27 19:10:00.153 [main] INFO  com.grocery.service.CheckoutService - Checkout processed - Subtotal: 2.50, Total Discount: 0.50, Final Total: 2.00
+2026-01-27 19:10:00.154 [main] DEBUG c.grocery.receipt.ReceiptFormatter - Formatting receipt from checkout result with 1 items
+2026-01-27 19:10:00.157 [main] INFO  com.grocery.GroceryCheckoutApp - Checkout completed - Total: £2.00
