@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.grocery.integration.CheckoutIntegrationTest
--------------------------------------------------------------------------------
-Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.160 s -- in com.grocery.integration.CheckoutIntegrationTest
