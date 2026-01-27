@@ -14,12 +14,14 @@
     <description>A comprehensive checkout system for grocery stores with special offers and itemized receipts</description>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
+        <!-- Build with Java 17 to match your runtime (was 11) -->
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <slf4j.version>2.0.11</slf4j.version>
-        <logback.version>1.4.14</logback.version>
-        <junit.version>5.10.1</junit.version>
+        <!-- bump logback to a secure 1.5.x release to avoid known CVEs -->
+        <logback.version>1.5.25</logback.version>
+        <junit.version>5.10.0</junit.version>
         <mockito.version>5.7.0</mockito.version>
     </properties>
 
@@ -36,25 +38,15 @@
             <version>${logback.version}</version>
         </dependency>
 
-        <!-- Testing -->
+        <!-- Testing: use the convenience aggregator for JUnit Jupiter -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
+            <artifactId>junit-jupiter</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-params</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
+
+        <!-- Mockito -->
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
@@ -76,8 +68,9 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
                 <configuration>
-                    <source>11</source>
-                    <target>11</target>
+                    <!-- use properties so the compiler plugin stays in sync with <properties> -->
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
                 </configuration>
             </plugin>
             <plugin>
