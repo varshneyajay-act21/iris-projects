@@ -18,6 +18,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import com.grocery.config.Constants;
 
 /**
  * Main application entry point for the Grocery Store Checkout System.
@@ -32,8 +33,8 @@ public class GroceryCheckoutApp {
     private final ReceiptFormatter receiptFormatter;
     private final DiscountRegistry discountRegistry;
 
-    // Admin password - can be overridden by setting the system property 'ADMIN_PASSWORD'
-    private static final String ADMIN_PASSWORD = System.getProperty("ADMIN_PASSWORD", "admin");
+    // Reuse admin password from central Constants (can be overridden via -DADMIN_PASSWORD)
+    private static final String ADMIN_PASSWORD = Constants.ADMIN_PASSWORD;
 
     /**
      * Constructs the application with a configured checkout service and receipt formatter.
@@ -51,15 +52,15 @@ public class GroceryCheckoutApp {
         this.checkoutService = new CheckoutService(discountRegistry);
         this.receiptFormatter = new ReceiptFormatter();
 
-        LOGGER.info("Grocery Checkout System initialized");
+        LOGGER.info("{} initialized", Constants.APP_NAME);
     }
 
     /**
      * Runs the interactive application.
      */
     public void run() {
-        LOGGER.info("Starting Grocery Checkout System");
-        System.out.println("\n=== Grocery Store Checkout System ===");
+        LOGGER.info("Starting {}", Constants.APP_NAME);
+        System.out.println("\n=== " + Constants.APP_NAME + " ===");
         printAvailableItemsAndOffers();
 
         try (Scanner scanner = new Scanner(System.in)) {
@@ -80,28 +81,28 @@ public class GroceryCheckoutApp {
                 String choice = scanner.nextLine().trim();
 
                 switch (choice) {
-                    case "1":
+                    case Constants.MAIN_OPT_ADD_ITEM:
                         addItemToBasket(basket, scanner);
                         break;
-                    case "2":
+                    case Constants.MAIN_OPT_REMOVE_ITEM:
                         removeItemFromBasket(basket, scanner);
                         break;
-                    case "3":
+                    case Constants.MAIN_OPT_VIEW_BASKET:
                         viewBasket(basket);
                         break;
-                    case "4":
+                    case Constants.MAIN_OPT_CHECKOUT:
                         checkout(basket);
                         basket.clear();
                         break;
-                    case "5":
+                    case Constants.MAIN_OPT_CLEAR:
                         basket.clear();
                         System.out.println("Basket cleared.");
                         LOGGER.info("Basket cleared by user");
                         break;
-                    case "6":
+                    case Constants.MAIN_OPT_ADMIN_MENU:
                         adminMenu(scanner);
                         break;
-                    case "7":
+                    case Constants.MAIN_OPT_EXIT:
                         running = false;
                         System.out.println("Thank you for using Grocery Checkout System. Goodbye!");
                         LOGGER.info("Application closed by user");
@@ -123,7 +124,7 @@ public class GroceryCheckoutApp {
     private void printAvailableItemsAndOffers() {
         System.out.println("Available items:");
         ItemCatalog.getAllItems().forEach((name, item) ->
-                System.out.printf("  - %s: £%.2f%n", item.getName(), item.getPricePerUnit())
+                System.out.printf("  - %s: %s%.2f%n", item.getName(), Constants.CURRENCY_SYMBOL, item.getPricePerUnit())
         );
         System.out.println("\nSpecial Offers:");
         System.out.println("  - Bananas: Buy 2 Get 1 Free");
@@ -197,7 +198,7 @@ public class GroceryCheckoutApp {
 
         System.out.println("\n--- Basket Contents ---");
         basket.getItems().forEach(item ->
-                System.out.printf("  %s: %d x £%.2f = £%.2f%n",
+                System.out.printf("  %s: %d x %s%.2f = %s%.2f%n",
                         item.getItem().getName(),
                         item.getQuantity(),
                         item.getItem().getPricePerUnit(),
@@ -234,7 +235,7 @@ public class GroceryCheckoutApp {
             String receipt = receiptFormatter.formatReceiptFromResult(result, receiptItems);
             System.out.println("\n" + receipt);
 
-            LOGGER.info("Checkout completed - Total: £{}", result.getTotal());
+            LOGGER.info("Checkout completed - Total: {}{}", Constants.CURRENCY_SYMBOL, result.getTotal());
         } catch (GroceryException e) {
             System.out.println("Checkout error: " + e.getMessage());
             LOGGER.error("Checkout error", e);
@@ -279,25 +280,25 @@ public class GroceryCheckoutApp {
 
             String choice = scanner.nextLine().trim();
             switch (choice) {
-                case "1":
+                case Constants.ADMIN_OPT_ADD_CATALOG:
                     addCatalogItem(scanner);
                     break;
-                case "2":
+                case Constants.ADMIN_OPT_REMOVE_CATALOG:
                     removeCatalogItem(scanner);
                     break;
-                case "3":
+                case Constants.ADMIN_OPT_ADD_DISCOUNT:
                     addDiscount(scanner);
                     break;
-                case "4":
+                case Constants.ADMIN_OPT_REMOVE_DISCOUNTS:
                     removeDiscountsForItem(scanner);
                     break;
-                case "5":
+                case Constants.ADMIN_OPT_LIST_DISCOUNTS:
                     listDiscounts();
                     break;
-                case "6":
+                case Constants.ADMIN_OPT_VIEW_CATALOG:
                     listCatalogItems();
                     break;
-                case "7":
+                case Constants.ADMIN_OPT_BACK:
                     back = true;
                     break;
                 default:
@@ -362,12 +363,12 @@ public class GroceryCheckoutApp {
             Item item = ItemCatalog.getItem(itemName);
 
             switch (type) {
-                case "1":
+                case Constants.DISCOUNT_TYPE_BOGO:
                     discountRegistry.registerDiscount(new BuyTwoGetOneFreeDiscount(item));
                     System.out.println("Buy 2 Get 1 Free discount added for " + item.getName());
                     LOGGER.info("Admin added BuyTwoGetOneFreeDiscount for {}", item.getName());
                     break;
-                case "2":
+                case Constants.DISCOUNT_TYPE_BULK:
                     System.out.print("Enter item count required for bulk (e.g. 3): ");
                     int count = Integer.parseInt(scanner.nextLine().trim());
                     System.out.print("Enter total price for the group (e.g. 0.75): ");
@@ -403,7 +404,7 @@ public class GroceryCheckoutApp {
         System.out.println("Catalog items:");
         try {
             ItemCatalog.getAllItems().forEach((key, item) ->
-                    System.out.printf(" - %s: £%.2f%n", item.getName(), item.getPricePerUnit())
+                    System.out.printf(" - %s: %s%.2f%n", item.getName(), Constants.CURRENCY_SYMBOL, item.getPricePerUnit())
             );
         } catch (Exception e) {
             System.out.println("Failed to list catalog items: " + e.getMessage());

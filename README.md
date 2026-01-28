@@ -91,7 +91,8 @@ The menu provides the following options:
 3. **View basket** - Display current basket contents
 4. **Checkout** - Process the checkout and display receipt
 5. **Clear basket** - Empty the basket
-6. **Exit** - Close the application
+6. **Admin menu** - Open the admin menu (password protected)
+7. **Exit** - Close the application
 
 ### Example Interaction
 
@@ -110,12 +111,36 @@ Special Offers:
 
 --- Options ---
 1. Add item to basket
-...
+2. Remove item from basket
+3. View basket
+4. Checkout
+5. Clear basket
+6. Admin menu
+7. Exit
 Choose an option: 1
 Enter item name: Bananas
 Enter quantity: 3
 Added 3 Bananas to basket.
 ```
+
+### Admin Menu
+
+After choosing the `Admin menu` option from the main interactive menu you'll be prompted for the admin password (default is `admin`). You can override the password at runtime by setting the system property `ADMIN_PASSWORD` (for example: `-DADMIN_PASSWORD=yourpw`).
+
+The admin menu provides these options:
+
+1. **Add catalog item** - Add a new `Item` to the runtime `ItemCatalog` by name and price.
+2. **Remove catalog item** - Remove an existing catalog item by name; associated discounts for that item are also removed.
+3. **Add discount** - Register a new discount (Buy 2 Get 1 Free or Bulk X for £Y) for a catalog item.
+4. **Remove discounts for item** - Unregister all discounts associated with an item name.
+5. **List discounts** - List all currently configured discounts and the item they apply to.
+6. **View catalog items** - List current catalog entries and their unit prices (this is the new admin view option).
+7. **Back** - Return to the main menu.
+
+Notes:
+- The admin password defaults to `admin` but can be overridden with the `ADMIN_PASSWORD` system property when launching the app.
+- Admin actions operate on the in-memory catalog and discount registry; they are not persisted to disk.
+- The `View catalog items` option is read-only and useful to confirm runtime changes made via admin add/remove operations.
 
 ### Programmatic Usage
 
