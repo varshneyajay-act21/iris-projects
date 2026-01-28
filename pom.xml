@@ -18,8 +18,8 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <slf4j.version>2.0.11</slf4j.version>
-        <!-- bump logback to a secure 1.5.x release to avoid known CVEs -->
+        <!-- Use recent, secure logging libraries; update these periodically when advisories appear -->
+        <slf4j.version>2.0.12</slf4j.version>
         <logback.version>1.5.25</logback.version>
         <junit.version>5.10.0</junit.version>
     </properties>
@@ -117,27 +117,7 @@
                     </archive>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.5.0</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                        <configuration>
-                            <createDependencyReducedPom>true</createDependencyReducedPom>
-                            <transformers>
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.grocery.GroceryCheckoutApp</mainClass>
-                                </transformer>
-                            </transformers>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+            <!-- Shade plugin removed: project will produce a regular jar. If you need an uberjar in the future, re-add Shade. -->
         </plugins>
     </build>
 </project>
