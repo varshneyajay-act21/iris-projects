@@ -269,6 +269,34 @@ void testCheckoutWithBuyTwoGetOneFreeBananas() {
 }
 ```
 
+## Test Coverage (JaCoCo)
+
+This project is configured to generate code coverage reports using JaCoCo.
+
+- Generate coverage report (HTML + XML):
+
+```bash
+# Run tests and create the report (HTML + XML)
+mvn jacoco:report
+# Or run the full build and report (report is generated in verify phase):
+mvn verify
+```
+
+- Open the HTML report (macOS):
+
+```bash
+open target/site/jacoco/index.html
+```
+
+- Files produced:
+  - `target/site/jacoco/index.html` — browsable HTML report
+  - `target/site/jacoco/jacoco.xml` — XML coverage report for CI tools (Codecov, SonarQube)
+  - `target/jacoco.exec` — JaCoCo execution data (binary)
+
+- CI integration notes:
+  - Upload `target/site/jacoco/jacoco.xml` to coverage services (Codecov, Coveralls) or point SonarQube at it.
+  - To fail builds on low coverage, enable JaCoCo's `check` goal with thresholds (see JaCoCo docs). I can add a sample `check` configuration if you'd like.
+
 ## Project Structure
 
 ```
@@ -367,6 +395,15 @@ The system validates inputs and provides meaningful error messages:
 3. Make your changes
 4. Write tests for new features
 5. Submit a pull request
+
+## Generated files
+
+Some build plugins produce generated files that should not be committed to source control. One example in this project is `dependency-reduced-pom.xml`, which is produced by the Maven Shade plugin when creating a shaded (uber) JAR.
+
+- Purpose: the file records a POM with dependencies that the Shade plugin has packaged into the shaded JAR. It is generated automatically during packaging and is not part of your source.
+- Action: The project `.gitignore` already contains an entry to ignore `/dependency-reduced-pom.xml` so the generated file won't be tracked.
+
+If `dependency-reduced-pom.xml` has already been committed to the repository and you want to remove it from history, see the "Removing a generated file from Git history" instructions below.
 
 ## License
 

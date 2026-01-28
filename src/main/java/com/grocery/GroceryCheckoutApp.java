@@ -273,7 +273,8 @@ public class GroceryCheckoutApp {
             System.out.println("3. Add discount");
             System.out.println("4. Remove discounts for item");
             System.out.println("5. List discounts");
-            System.out.println("6. Back");
+            System.out.println("6. View catalog items");
+            System.out.println("7. Back");
             System.out.print("Choose an admin option: ");
 
             String choice = scanner.nextLine().trim();
@@ -294,6 +295,9 @@ public class GroceryCheckoutApp {
                     listDiscounts();
                     break;
                 case "6":
+                    listCatalogItems();
+                    break;
+                case "7":
                     back = true;
                     break;
                 default:
@@ -390,6 +394,21 @@ public class GroceryCheckoutApp {
         int removed = discountRegistry.unregisterDiscountsForItem(itemName);
         System.out.println("Removed " + removed + " discount(s) for item: " + itemName);
         LOGGER.info("Admin removed {} discounts for item {}", removed, itemName);
+    }
+
+    /**
+     * Lists all catalog items to the admin console.
+     */
+    private void listCatalogItems() {
+        System.out.println("Catalog items:");
+        try {
+            ItemCatalog.getAllItems().forEach((key, item) ->
+                    System.out.printf(" - %s: £%.2f%n", item.getName(), item.getPricePerUnit())
+            );
+        } catch (Exception e) {
+            System.out.println("Failed to list catalog items: " + e.getMessage());
+            LOGGER.warn("Failed to list catalog items", e);
+        }
     }
 
     private void listDiscounts() {
