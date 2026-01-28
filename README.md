@@ -123,7 +123,7 @@ Added 3 Bananas to basket.
 // Create discount registry and register discounts
 DiscountRegistry discountRegistry = new DiscountRegistry();
 discountRegistry.registerDiscount(new BuyTwoGetOneFreeDiscount(ItemCatalog.BANANAS));
-discountRegistry.registerDiscount(new BulkDiscountDiscount(
+discountRegistry.registerDiscount(new BulkDiscount(
     ItemCatalog.ORANGES,
     3,
     new BigDecimal("0.75")
@@ -167,7 +167,7 @@ The system follows clean architecture principles with clear separation of concer
 - **`com.grocery.discount`**: Discount strategies
   - `Discount`: Abstract discount base class
   - `BuyTwoGetOneFreeDiscount`: Implementation for BOGO offers
-  - `BulkDiscountDiscount`: Implementation for bulk/multi-buy offers
+  - `BulkDiscount`: Implementation for bulk/multi-buy offers
   - `DiscountRegistry`: Registry for managing discounts
   - `DiscountResult`: Discount calculation result
 
@@ -244,7 +244,7 @@ mvn test -Dtest=CheckoutServiceTest
   - `ItemTest`: Item creation and validation
   - `BasketTest`: Basket operations
   - `BuyTwoGetOneFreeDiscountTest`: BOGO discount calculations
-  - `BulkDiscountDiscountTest`: Bulk discount calculations
+  - `BulkDiscountTest`: Bulk discount calculations
   - `CheckoutServiceTest`: Checkout processing
   - `ReceiptFormatterTest`: Receipt generation
 
@@ -316,7 +316,7 @@ grocery-store-checkout-system/
     │   ├── discount/
     │   │   ├── Discount.java                       # Discount abstract class
     │   │   ├── BuyTwoGetOneFreeDiscount.java       # BOGO implementation
-    │   │   ├── BulkDiscountDiscount.java           # Bulk discount implementation
+    │   │   ├── BulkDiscount.java           # Bulk discount implementation
     │   │   ├── DiscountRegistry.java               # Discount registry
     │   │   └── DiscountResult.java                 # Discount result DTO
     │   ├── service/
@@ -332,7 +332,7 @@ grocery-store-checkout-system/
         │   └── BasketTest.java
         ├── discount/
         │   ├── BuyTwoGetOneFreeDiscountTest.java
-        │   └── BulkDiscountDiscountTest.java
+        │   └── BulkDiscountTest.java
         ├── service/
         │   └── CheckoutServiceTest.java
         ├── receipt/
@@ -355,7 +355,7 @@ The application uses SLF4J with Logback for logging. Configuration can be custom
 ## Dependencies
 
 - **Logging**: SLF4J 2.0.11, Logback 1.4.14
-- **Testing**: JUnit 5 (Jupiter), Mockito 5.7.0
+- **Testing**: JUnit 5 (Jupiter)
 - **Build**: Maven 3.11.0, Java Compiler 11
 
 All dependencies are specified in `pom.xml` with fixed versions for stability and security.

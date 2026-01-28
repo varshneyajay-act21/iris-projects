@@ -4,9 +4,9 @@ import com.grocery.model.Item;
 import com.grocery.exception.CatalogException;
 import java.math.BigDecimal;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Catalog of available grocery items with their prices.
@@ -24,8 +24,8 @@ public class ItemCatalog {
     public static final Item LEMONS = new Item("Lemons", new BigDecimal("0.25"));
     public static final Item PEACHES = new Item("Peaches", new BigDecimal("0.75"));
 
-    // Backing map is mutable so admin can add/remove items at runtime
-    private static final Map<String, Item> CATALOG = new HashMap<>();
+    // Backing map is concurrent for thread-safety and atomic operations
+    private static final Map<String, Item> CATALOG = new ConcurrentHashMap<>();
 
     static {
         CATALOG.put(BANANAS.getName().toLowerCase(), BANANAS);
@@ -64,10 +64,10 @@ public class ItemCatalog {
     /**
      * Gets all available items in the catalog.
      *
-     * @return an unmodifiable view of all items
+     * @return an unmodifiable snapshot of all items
      */
     public static Map<String, Item> getAllItems() {
-        return Collections.unmodifiableMap(CATALOG);
+        return Collections.unmodifiableMap(new java.util.HashMap<>(CATALOG));
     }
 
     /**
@@ -85,18 +85,18 @@ public class ItemCatalog {
     }
 
     /**
-     * Adds a new item to the catalog. This is synchronized to provide simple thread-safety for runtime modifications.
+     * Adds a new item to the catalog. Uses atomic putIfAbsent to avoid race conditions.
      *
      * @param item the item to add (must not be null and name must not already exist)
      * @throws CatalogException if item is null or already exists
      */
-    public static synchronized void addItem(Item item) {
+    public static void addItem(Item item) {
         Objects.requireNonNull(item, "Item cannot be null");
         String key = item.getName().toLowerCase();
-        if (CATALOG.containsKey(key)) {
+        Item existing = CATALOG.putIfAbsent(key, item);
+        if (existing != null) {
             throw new CatalogException("Item already exists in catalog: " + item.getName());
         }
-        CATALOG.put(key, item);
     }
 
     /**
@@ -106,7 +106,7 @@ public class ItemCatalog {
      * @return the removed Item
      * @throws CatalogException if name is null or item not found
      */
-    public static synchronized Item removeItem(String name) {
+    public static Item removeItem(String name) {
         if (name == null) {
             throw new CatalogException("Item name cannot be null");
         }
