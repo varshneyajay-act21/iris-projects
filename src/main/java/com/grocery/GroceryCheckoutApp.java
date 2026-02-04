@@ -198,7 +198,7 @@ public class GroceryCheckoutApp {
 
         System.out.println("\n--- Basket Contents ---");
         basket.getItems().forEach(item ->
-                System.out.printf("  %s: %d x %s%.2f = %s%.2f%n",
+                System.out.printf("  %s: %d x %.2f = %.2f%n",
                         item.getItem().getName(),
                         item.getQuantity(),
                         item.getItem().getPricePerUnit(),
