@@ -46,7 +46,8 @@ public class GroceryCheckoutApp {
         discountRegistry.registerDiscount(new BulkDiscount(
                 ItemCatalog.ORANGES,
                 3,
-                new BigDecimal("0.75")
+                new BigDecimal("0.75"),
+
         ));
 
         this.checkoutService = new CheckoutService(discountRegistry);
@@ -178,9 +179,15 @@ public class GroceryCheckoutApp {
         }
 
         try {
-            basket.removeItem(ItemCatalog.getItem(itemName));
-            System.out.printf("Removed %s from basket.%n", itemName);
-            LOGGER.info("Removed {} from basket", itemName);
+            Integer removed = basket.removeItem(ItemCatalog.getItem(itemName));
+            if(removed!=null){
+                System.out.printf("Removed %s from basket.%n", itemName);
+                LOGGER.info("Removed {} from basket", itemName);
+                return;
+            }
+            System.out.printf("Item %s not available in basket.%n", itemName);
+            LOGGER.info("Item {} not available in basket", itemName);
+
         } catch (CatalogException e) {
             System.out.println("Item not available: " + e.getMessage());
             LOGGER.warn("Attempted to remove item failed: {}", e.getMessage());
@@ -435,3 +442,27 @@ public class GroceryCheckoutApp {
         app.run();
     }
 }
+1. Introduce yourself.
+        2. Can you explain the structure of your recent project? Tell about the business domain?
+        3. What was your team size? What was your role and responsibilties?
+        4. What happens if your spring batch job fails in the middle of execution? How where error and exceptions handled in your project?
+        5. Did your project used caching? If so, how it was implemented and  what was  its pupose?
+        6. If the production issue occurs, what is the first thing you check?
+        7. How do you write supportatble /maintainable code - code that is easy to understand and support in case of future issues.
+8. Do you write unit test cases? Which frameworks do you use for the same? What about integration testing in your project?
+        9. Was your entire team working in the same time zone? Were you comfortable coordinating with team members from Canada or the UK for issue resolutions or information sharing?
+        10. What was the sprint duration in your project? what was your role in release process?
+        11. Can you explain your project's git branch stucure? Which branches are used for the UAT and production environments?
+        12. Looking back, what aspect of your team could have been improved?
+        13. Have you ever handle in prod issues? if so, share your experiences?
+
+Questions for 2nd round-
+
+Explain recent project which you have worked on.
+Follow up questions from your project.
+How will you ensure the performance of the application with billions of entries in your database.
+Scaling spring boot applications.
+How to create multiple instances of a service and managing them.
+Roles and responsibilities in previous project.
+Basic questions on Agile methodology.
+Positive points about the team which you have worked recently.
